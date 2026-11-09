@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#f8dce8" />
+  <title>For Babe — December 25</title>
+  <style>
+    :root {
+      --rose: #d982a5;
+      --deep: #743d59;
+      --ink: #503746;
+      --cream: #fff9f7;
+      --blush: #fceaf0;
+      --gold: #c6a36b;
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0; color: var(--ink);
+      font-family: Georgia, "Times New Roman", serif;
+      background: linear-gradient(135deg, #fff8f7 0%, #fbe8ef 48%, #f7dce7 100%);
+      overflow-x: hidden;
+    }
+    .grain {
+      position: fixed; inset: 0; pointer-events: none; opacity: .12; z-index: 5;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.25'/%3E%3C/svg%3E");
+    }
+    .hero {
+      min-height: 100svh; display: grid; place-items: center; padding: 36px 20px;
+      text-align: center; position: relative;
+    }
+    .hero-card {
+      width: min(680px, 100%); padding: 54px 28px 48px; border: 1px solid rgba(198,163,107,.55);
+      background: rgba(255,249,247,.72); backdrop-filter: blur(12px);
+      box-shadow: 0 24px 70px rgba(116,61,89,.12); border-radius: 5px; position: relative;
+    }
+    .eyebrow { letter-spacing: .28em; text-transform: uppercase; color: var(--rose); font: 11px Arial,sans-serif; }
+    h1 { font-size: clamp(46px, 10vw, 82px); font-weight: 400; line-height: .98; margin: 22px 0 16px; color: var(--deep); }
+    h1 em { color: var(--rose); font-weight: 400; }
+    .subtitle { font: 13px/1.9 Arial,sans-serif; letter-spacing: .08em; color: #8a6878; }
+    .date { margin-top: 27px; color: var(--gold); letter-spacing: .25em; font: 11px Arial,sans-serif; }
+    .open-btn, .small-btn {
+      border: 0; background: var(--deep); color: white; padding: 14px 24px; margin-top: 30px;
+      letter-spacing: .12em; text-transform: uppercase; font: 10px Arial,sans-serif; cursor: pointer;
+      transition: .25s; border-radius: 2px;
+    }
+    .open-btn:hover, .small-btn:hover { background: var(--rose); transform: translateY(-2px); }
+    .heart { color: var(--rose); font-size: 19px; margin: 20px 0 0; }
+    section { padding: 84px 20px; }
+    .wrap { width: min(900px, 100%); margin: auto; }
+    .section-title { text-align: center; font-size: clamp(32px, 6vw, 48px); font-weight: 400; color: var(--deep); margin: 10px 0 14px; }
+    .section-note { text-align: center; font: 12px/1.8 Arial,sans-serif; color: #987b89; letter-spacing: .04em; }
+    .letter {
+      max-width: 700px; margin: 34px auto 0; padding: clamp(25px, 6vw, 48px);
+      background: rgba(255,255,255,.62); border: 1px solid rgba(198,163,107,.45);
+      box-shadow: 0 18px 50px rgba(116,61,89,.08); line-height: 1.95; font-size: 17px;
+    }
+    .letter p { margin: 0 0 18px; }
+    .signature { color: var(--rose); font-style: italic; font-size: 23px; margin-top: 28px; }
+    .gallery { display: grid; grid-template-columns: repeat(5, 1fr); gap: 13px; margin-top: 38px; }
+    .photo {
+      aspect-ratio: 3/4; background: linear-gradient(145deg,#f8dce7,#fff7f3);
+      border: 7px solid #fffdfb; box-shadow: 0 10px 24px rgba(116,61,89,.12);
+      display: grid; place-items: center; overflow: hidden; position: relative;
+    }
+    .photo img { width: 100%; height: 100%; object-fit: cover; display: block; }
+    .photo span { text-align: center; padding: 10px; color: #a77d91; font: 10px/1.7 Arial,sans-serif; letter-spacing: .1em; text-transform: uppercase; }
+    .closing { text-align: center; padding-bottom: 110px; }
+    .closing .big-heart { font-size: 42px; color: var(--rose); margin: 20px 0; }
+    footer { text-align: center; padding: 24px; color: #a18492; font: 10px Arial,sans-serif; letter-spacing: .15em; }
+    .music {
+      position: fixed; right: 18px; bottom: 18px; z-index: 10; border: 1px solid #e4bfd0;
+      background: rgba(255,249,247,.9); color: var(--deep); padding: 12px 15px; border-radius: 30px;
+      font: 11px Arial,sans-serif; cursor: pointer; box-shadow: 0 5px 20px rgba(116,61,89,.12);
+    }
+    .hidden { display: none; }
+    .sparkle { position: absolute; color: #d6b77e; opacity: .8; font-size: 17px; }
+    @media (max-width: 650px) {
+      .gallery { grid-template-columns: repeat(2, 1fr); }
+      .gallery .photo:last-child { grid-column: 1 / -1; width: 55%; justify-self: center; }
+      section { padding: 65px 18px; }
+      .hero-card { padding: 45px 20px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="grain"></div>
+  <main>
+    <section class="hero" id="home">
+      <div class="hero-card">
+        <span class="sparkle" style="top:22px;left:25px">✧</span>
+        <span class="sparkle" style="top:38px;right:30px">✦</span>
+        <div class="eyebrow">A little something for you</div>
+        <h1>Happy Birthday,<br><em>Babe.</em></h1>
+        <div class="subtitle">A page made with love, just for you.</div>
+        <div class="date">DECEMBER 25 · NOEY'S DAY</div>
+        <div class="heart">♡</div>
+        <button class="open-btn" id="openBtn">Open your surprise</button>
+      </div>
+    </section>
+
+    <div id="surprise" class="hidden">
+      <section>
+        <div class="wrap">
+          <div class="eyebrow" style="text-align:center">To my favorite person</div>
+          <h2 class="section-title">A letter for you</h2>
+          <p class="section-note">Some words I hope you can keep close.</p>
+          <article class="letter">
+            <p>My dearest Babe,</p>
+            <p>Happy birthday, Noey. ♡</p>
+            <p>Sometimes I think about how we met, and I still find it funny how something that seemed so random became one of the most meaningful parts of my life. We met in Roblox, of all places. I remember being curious about you because you looked so cute while we were playing. And you really didn't kill me in that game? Hahaha. I thought that was adorable.</p>
+            <p>Eventually, I decided to talk to you. It wasn't easy at first because we spoke different languages, and sometimes I didn't know how to express what I wanted to say. Even asking for your Instagram username felt like a whole mission because Roblox kept censoring my messages. Hahaha. But somehow, we kept trying, and I'm really glad we did.</p>
+            <p>Then we became friends on Instagram, and time started flying. Before I knew it, we were talking every single day, almost nonstop, for nearly a year. Who would've thought that two people who started out as strangers and friends would eventually become something more?</p>
+            <p>After everything, we finally decided to be together. I know it took me quite a while to tell you how I truly felt. I'm sorry for making you wait. I was shy, and honestly, a little unsure of myself. But I'm glad I found the courage to tell you, because that moment brought us here.</p>
+            <p>Thank you for every conversation, every laugh, every little moment, and every memory we've made so far. Even the simplest things feel special because they're shared with you. I'm grateful that our paths crossed in the most unexpected way.</p>
+            <p>On your birthday, I wish you happiness, good health, peace, and the courage to chase everything you dream of. I hope life treats you gently, and I hope you never forget how precious you are.</p>
+            <p>More than anything, I hope we keep choosing each other, keep learning, and keep growing together. I hope that one day, we finally get to meet, turn all these messages and memories into real moments, and make even more beautiful memories side by side.</p>
+            <p>I don't know exactly what the future holds, but I know that I want to keep making room for you in mine. Here's to us, to our little story that began in a game, and to all the chapters we haven't written yet.</p>
+            <p class="signature">Happy birthday, my Babe.<br>With all my love,<br>Randy ♡</p>
+          </article>
+        </div>
+      </section>
+
+      <section style="background:rgba(255,255,255,.28)">
+        <div class="wrap">
+          <div class="eyebrow" style="text-align:center">Little moments, big memories</div>
+          <h2 class="section-title">Our memories</h2>
+          <p class="section-note">A few little moments I want to keep close.</p>
+          <div class="gallery">
+            <div class="photo"><img src="assets/memory1.jpg" alt="A special memory with Noey" loading="lazy"></div>
+            <div class="photo"><img src="assets/memory2.jpg" alt="A special memory with Noey" loading="lazy"></div>
+            <div class="photo"><img src="assets/memory3.jpg" alt="A special memory with Noey" loading="lazy"></div>
+            <div class="photo"><img src="assets/memory4.jpg" alt="A special memory with Noey" loading="lazy"></div>
+            <div class="photo"><img src="assets/memory5.jpg" alt="A special memory with Noey" loading="lazy"></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="closing">
+        <div class="wrap">
+          <div class="eyebrow">One last thing</div>
+          <h2 class="section-title">You make life sweeter.</h2>
+          <div class="big-heart">♡</div>
+          <p class="section-note">Happy birthday, Noey.<br>Here's to more laughter, more little adventures, and more memories.</p>
+          <p style="color:#b47b96;font-style:italic;font-size:22px;margin-top:30px">From a random Roblox game to a story I never want to end.</p>
+          <p class="section-note" style="margin-top:28px">— Randy</p>
+        </div>
+      </section>
+    </div>
+  </main>
+  <button class="music" id="musicBtn" aria-label="Play or pause music">♫ Add your song</button>
+  <audio id="song" loop></audio>
+  <footer>MADE ESPECIALLY FOR NOEY · DECEMBER 25</footer>
+  <script>
+    const openBtn = document.getElementById('openBtn');
+    const surprise = document.getElementById('surprise');
+    const musicBtn = document.getElementById('musicBtn');
+    const song = document.getElementById('song');
+
+    // Place an audio file you are allowed to use at assets/song.mp3.
+    // The opening-button click is a user gesture, so browsers may allow playback here.
+    song.src = 'assets/song.mp3';
+    song.addEventListener('error', () => {
+      musicBtn.textContent = '♫ Add your song';
+    });
+
+    openBtn.addEventListener('click', async () => {
+      surprise.classList.remove('hidden');
+      openBtn.textContent = 'Your surprise is open ♡';
+      openBtn.disabled = true;
+
+      try {
+        await song.play();
+        musicBtn.textContent = 'Ⅱ Pause music';
+      } catch (e) {
+        musicBtn.textContent = '♫ Tap to play music';
+      }
+
+      setTimeout(() => surprise.scrollIntoView({ behavior: 'smooth' }), 120);
+    });
+
+    musicBtn.addEventListener('click', async () => {
+      if (song.paused) {
+        try {
+          await song.play();
+          musicBtn.textContent = 'Ⅱ Pause music';
+        } catch (e) {
+          musicBtn.textContent = '♫ Tap to play music';
+        }
+      } else {
+        song.pause();
+        musicBtn.textContent = '♫ Play music';
+      }
+    });
+  </script>
+</body>
+</html>
